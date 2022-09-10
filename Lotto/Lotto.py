@@ -22,9 +22,10 @@ def lotto_game():
     drawn_numbers = []
     for _ in range(6):
         drown = randint(1, 49)
-        drawn_numbers.append(drown)
+        if drown not in drawn_numbers:
+            drawn_numbers.append(drown)
     sorted_draw_number = sorted(drawn_numbers)
-    print(f"Drawn number is {' '.join(str(el) for el in sorted_draw_number)}")
+    print(f"Drawn number: {' '.join(str(el) for el in sorted_draw_number)}")
     # checking how many numbers are the same
     hits = 0
     for element in your_numb:
