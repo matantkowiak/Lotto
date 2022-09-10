@@ -2,6 +2,7 @@ from random import randint
 
 
 def lotto_game():
+    # User selectable numbers including errors
     your_numb = []
     while len(your_numb) < 6:
         try:
@@ -17,12 +18,14 @@ def lotto_game():
             print("Type a number")
     sorted_your_numb = sorted(your_numb)
     print(f"Your number: {' '.join(str(el) for el in sorted_your_numb)}")
+    # selected numbers by the computer
     drawn_numbers = []
     for _ in range(6):
         drown = randint(1, 49)
         drawn_numbers.append(drown)
     sorted_draw_number = sorted(drawn_numbers)
     print(f"Drawn number is {' '.join(str(el) for el in sorted_draw_number)}")
+    # checking how many numbers are the same
     hits = 0
     for element in your_numb:
         if element in drawn_numbers:
